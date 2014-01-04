@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div id="mainbox">
+  <h1>MaBub! The MOSTEST BEST bubble game</h1>
+  <a class="alertify-button mybutton" href="{{ url_for('play') }}">Play Game!</a>
+
+  <div id="highscore" class="score">
+    <h2>Highscores:</h2>
+    <table></table>
+  </div>
+
+  <div id="lowscore" class="score">
+    <h2>Lowscores:</h2>
+    <table></table>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+  scores.fill_score_table("highscore", scores.highscores())
+  scores.fill_score_table("lowscore", scores.lowscores())
+</script>
+{% endblock %}

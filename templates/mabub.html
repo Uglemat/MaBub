@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+
+
+{% block body %}
+<div id="layers">
+  <canvas id="bubble_canvas">Sorry, your browser doesn't support the &lt;canvas&gt; element.</canvas>
+  <canvas id="game_canvas">  Sorry, your browser doesn't support the &lt;canvas&gt; element.</canvas>
+</div>
+<div id="infobox">
+  <h2>Score:  <span class="infobox_val" id="score_val"></span></h2>
+  <a class="alertify-button mybutton" href="{{ url_for('index') }}">Main page</a>
+  <button class="alertify-button mybutton" id="newgamebtn">New game</button>
+</div>
+{% endblock %}
+
+{% block scripts %}
+
+{{ super() }}
+<script src="{{ url_for('static', filename='bubbles.js') }}">      </script>
+<script src="{{ url_for('static', filename='game.js') }}">         </script>
+{% endblock %}

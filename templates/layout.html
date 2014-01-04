@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mabub - the truly AWESOME bubble game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='watch.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='mabub.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='alertify/alertify.core.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='alertify/alertify.default.css') }}">
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+
+    {%- block body -%}
+    {% endblock body %}
+
+    <script>
+      ball_location =  '{{ url_for("static", filename="ball.png") }}';
+      index_location = '{{ url_for("index") }}';
+    </script>
+    {% block scripts %}
+    <script src="{{ url_for('static', filename='jquery-2.0.3.js') }}"> </script>
+    <script src="{{ url_for('static', filename='utils.js') }}">        </script>
+    <script src="{{ url_for('static', filename='watch.js') }}">        </script>
+    <script src="{{ url_for('static', filename='scores.js') }}">        </script>
+    <script src="{{ url_for('static', filename='alertify/alertify.js') }}"></script>
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,78 @@
+#watching_box {
+    background: rgba(50, 50, 50, 0.5);
+    color: rgba(255, 255, 255, .5);
+    display: inline;
+    padding: 10px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    min-width: 500px;
+}
+#watching_box:hover,
+#watching_box.opaque {
+    background: rgb(50, 50, 50);
+    border-color: rgb(0, 0, 0);
+    color: white;
+}
+#watching_box.minimized .watching:not(.nothidden) {
+    display: none;
+}
+#watching_box.minimized {
+    min-width: 30px;
+}
+#watching_box.paused {
+    background: rgb(70, 40, 40);
+}
+input.watching {
+    margin: 5px;
+}
+hr.watching {
+    margin: 10px;
+}
+button.watching {
+    float: right;
+    margin-right: 10px;
+    padding: 3px;
+}
+button.watching:hover,
+input.watching:hover {
+    box-shadow: 0 0 5px 2px black;
+}
+label.watching {
+    font-size: .85em;
+    text-shadow: 1px 1px 3px black;
+    padding: 3px;
+}
+.watching-section {
+    color: lightblue;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: .9em;
+    letter-spacing: 2px;
+    margin-left: 10px;
+    text-shadow: 0 0 1.5px cyan;
+    padding: 5px 0;
+}
+.watching-val {
+    color: #a58;
+}
+.watching-key {
+    color: #3a3;
+    font-weight: bold;
+    text-shadow: 0 0 3px black;
+}
+textarea#watching_textarea {
+    margin-top: 10px;
+    
+    width: 500px;
+    max-width: 500px;
+    min-width: 500px;
+    margin: 5px;
+}
+button#exec_button {
+    margin: 0 0 0 0;
+    display: block;
+    float: none;
+}
