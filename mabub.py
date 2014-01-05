@@ -20,7 +20,7 @@
 
 from flask import Flask, render_template
 
-DEBUG = True
+DEBUG = False
 app = Flask(__name__)
 
 @app.route("/")

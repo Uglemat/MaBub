@@ -257,7 +257,7 @@ BubbleState.prototype.colors_left = function () {
     /*
 
      Returns a list of all the colors that's left among the bubbles, or
-     the default colors of there's no colors left.
+     the default colors if there's no colors left.
 
      */
     var colors = [];

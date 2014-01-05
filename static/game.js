@@ -89,7 +89,7 @@ function Game() {
 
 
 
-    this.bubble_queue_length = 3;
+    this.bubble_queue_length = 6;
     this.bubble_queue = [];
     this.fill_bubble_queue();
 
@@ -119,12 +119,10 @@ function Game() {
     this.canvas.width  = this.bubbles.bubblesize * this.bubbles.width;
     this.canvas.height = this.guny+40;
 
-
-    this.bubble_canvas  = document.getElementById('bubble_canvas');
-    this.bubble_context = this.bubble_canvas.getContext('2d');
-
     this.bubble_canvas.width  = this.bubbles.bubblesize * this.bubbles.width;
     this.bubble_canvas.height = this.guny+40;
+
+
 
     this.mousemove_event_func = function(e) {
         self.mousex = e.layerX * (self.canvas.width  / $(self.canvas).width() );
@@ -266,7 +264,20 @@ Game.prototype.place_bubble_and_stuff = function (dest, color) {
 
     if (!this.bubble_queue.length) {
         this.fill_bubble_queue();
-        var numrows = Math.max(1, 6 - self.bubbles.compute_actual_height());
+
+        /* Filling the bubble area. Doing some arithmetic to make sure that enough bubbles are filled
+         on so that the game is fun to play. */
+
+        var colors = this.bubbles.colors_left().length;
+
+        var min_bubble_increase;
+        if (colors > 3)
+            min_bubble_increase = 1;
+        else
+            min_bubble_increase = {1: 4, 2: 4, 3: 3}[colors];
+        console.log("min_bubble_increase", min_bubble_increase);
+
+        var numrows = Math.max(min_bubble_increase, 6 - self.bubbles.compute_actual_height());
         for (var i=0; i<numrows; i++)
             this.bubbles.add_row();
     }
