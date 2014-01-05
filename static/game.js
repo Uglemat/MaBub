@@ -89,7 +89,7 @@ function Game() {
 
 
 
-    this.bubble_queue_length = 6;
+    this.bubble_queue_length = 4;
     this.bubble_queue = [];
     this.fill_bubble_queue();
 
